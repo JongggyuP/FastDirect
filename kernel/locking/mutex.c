@@ -734,6 +734,11 @@ __ww_mutex_add_waiter(struct mutex_waiter *waiter,
 /*
  * Lock a mutex (possibly interruptible), slowpath:
  */
+
+/* 
+ * Commented by Jonggyu
+ * Mutext slowpath
+ */
 static __always_inline int __sched
 __mutex_lock_common(struct mutex *lock, long state, unsigned int subclass,
 		    struct lockdep_map *nest_lock, unsigned long ip,
