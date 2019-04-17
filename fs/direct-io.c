@@ -692,6 +692,9 @@ static int get_more_blocks(struct dio *dio, struct dio_submit *sdio,
 				create = 0;
 		}
 
+    /* Commented by Jonggyu
+     * Here, sdio->get_block is mapped to get_data_block_dio in the case of F2FS
+     */
 		ret = (*sdio->get_block)(dio->inode, fs_startblk,
 						map_bh, create);
 
