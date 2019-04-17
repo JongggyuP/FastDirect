@@ -1148,6 +1148,11 @@ static inline int drop_refcount(struct dio *dio)
  * individual fields and will generate much worse code. This is important
  * for the whole file.
  */
+
+/* Commented by Jonggyu
+ * Usually, this func allocates and initializes dio structure
+ * and call do_direct_IO
+ */
 static inline ssize_t
 do_blockdev_direct_IO(struct kiocb *iocb, struct inode *inode,
 		      struct block_device *bdev, struct iov_iter *iter,
