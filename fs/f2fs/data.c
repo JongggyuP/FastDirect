@@ -2073,7 +2073,11 @@ static int check_direct_IO(struct inode *inode, struct iov_iter *iter,
 
 	return 0;
 }
-
+/*
+ * Commented by Jonggyu
+ * Direct IO starts from this function
+ * It is mapped to address_space_operations.direct_IO
+ */
 static ssize_t f2fs_direct_IO(struct kiocb *iocb, struct iov_iter *iter)
 {
 	struct address_space *mapping = iocb->ki_filp->f_mapping;
