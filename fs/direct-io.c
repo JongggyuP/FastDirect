@@ -695,8 +695,10 @@ static int get_more_blocks(struct dio *dio, struct dio_submit *sdio,
     /* Commented by Jonggyu
      * Here, sdio->get_block is mapped to get_data_block_dio in the case of F2FS
      */
+    trace_printk("get_data_block_dio starts"); //
 		ret = (*sdio->get_block)(dio->inode, fs_startblk,
 						map_bh, create);
+    trace_printk("get_data_block_dio ends"); //
 
 		/* Store for completion */
 		dio->private = map_bh->b_private;

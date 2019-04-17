@@ -1079,6 +1079,10 @@ static int get_data_block(struct inode *inode, sector_t iblock,
 							flag, next_pgofs);
 }
 
+/*
+ * Commented by Jonggyu
+ * This func plays a role of getting a new data block for direct IOs
+ */
 static int get_data_block_dio(struct inode *inode, sector_t iblock,
 			struct buffer_head *bh_result, int create)
 {
